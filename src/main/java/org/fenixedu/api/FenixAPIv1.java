@@ -101,8 +101,8 @@ import java.util.stream.Stream;
 
 import static org.fenixedu.academic.dto.SummariesManagementBean.SummaryType.NORMAL_SUMMARY;
 
-@Path("/fenix/v1")
-public class FenixAPIv1 {
+
+public abstract class FenixAPIv1 {
 
     private static final Logger logger = LoggerFactory.getLogger(FenixAPIv1.class);
 
@@ -163,6 +163,8 @@ public class FenixAPIv1 {
         return null;
     }
 
+    protected abstract Set<FenixPerson.FenixRole> getPersonRoles(Person person, PersonInformationBean pib);
+
     /**
      * It will return name, istid, campus, email, photo and contacts
      *
@@ -177,30 +179,8 @@ public class FenixAPIv1 {
     public FenixPerson person() {
 
         final Person person = getPerson();
-        final User user = person.getUser();
         PersonInformationBean pib = new PersonInformationBean(person, true);
-        final Set<FenixPerson.FenixRole> roles = new HashSet<FenixRole>();
-
-        if (new ActiveTeachersGroup().isMember(user)) {
-            roles.add(new FenixPerson.TeacherFenixRole(pib.getTeacherDepartment()));
-        }
-
-        if (new ActiveStudentsGroup().isMember(user)) {
-            roles.add(new FenixPerson.StudentFenixRole(pib.getStudentRegistrations()));
-        }
-
-        if (new AllAlumniGroup().isMember(user)) {
-            ArrayList<Registration> concludedRegistrations = new ArrayList<>();
-            if (person.getStudent() != null) {
-                concludedRegistrations.addAll(person.getStudent().getConcludedRegistrations());
-            }
-            roles.add(new FenixPerson.AlumniFenixRole(concludedRegistrations));
-        }
-
-        // TODO: IST
-        /*if (new ActiveEmployees().isMember(user)) {
-            roles.add(new FenixPerson.EmployeeFenixRole());
-        }*/
+        final Set<FenixPerson.FenixRole> roles = getPersonRoles(person, pib);
 
         final String name = pib.getName();
         final String displayName = person.getDisplayName();
