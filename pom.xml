@@ -19,13 +19,7 @@
     <url>http://fenixedu.org</url>
 
     <properties>
-        <version.org.fenixedu.bennu>5.2.1</version.org.fenixedu.bennu>
-        <version.org.fenixedu.fenixedu-commons>2.0.0</version.org.fenixedu.fenixedu-commons>
-        <version.org.fenixedu.academic>18.9.0-SNAPSHOT</version.org.fenixedu.academic>
-        <!--<version.org.fenixedu.cms>3.1.2</version.org.fenixedu.cms>
-        <version.org.fenixedu.fenixedu-learning>3.1.5</version.org.fenixedu.fenixedu-learning>-->
-        <version.com.google.code.gson.gson>2.8.0</version.com.google.code.gson.gson>
-        <version.com.google.guava.guava>21.0</version.com.google.guava.guava>
+        <version.org.fenixedu.academic>19.0.0</version.org.fenixedu.academic>
     </properties>
 
     <dependencies>
@@ -33,36 +27,6 @@
             <groupId>org.fenixedu</groupId>
             <artifactId>fenixedu-academic</artifactId>
             <version>${version.org.fenixedu.academic}</version>
-        </dependency>
-        <!--<dependency>
-            <groupId>org.fenixedu</groupId>
-            <artifactId>fenixedu-cms</artifactId>
-            <version>${version.org.fenixedu.cms}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.fenixedu</groupId>
-            <artifactId>fenixedu-learning</artifactId>
-            <version>${version.org.fenixedu.fenixedu-learning}</version>
-        </dependency>-->
-        <dependency>
-            <groupId>org.fenixedu</groupId>
-            <artifactId>bennu-core</artifactId>
-            <version>${version.org.fenixedu.bennu}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.fenixedu</groupId>
-            <artifactId>bennu-oauth</artifactId>
-            <version>${version.org.fenixedu.bennu}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${version.com.google.guava.guava}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>${version.com.google.code.gson.gson}</version>
         </dependency>
     </dependencies>
 
