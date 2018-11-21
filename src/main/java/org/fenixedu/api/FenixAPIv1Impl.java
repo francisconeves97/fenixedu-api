@@ -1,13 +1,14 @@
 package org.fenixedu.api;
 
+import org.fenixedu.academic.api.beans.FenixPerson;
+import org.fenixedu.academic.api.FenixAPIv1;
+import org.fenixedu.academic.api.dto.PersonInformationBean;
 import org.fenixedu.academic.domain.Person;
 import org.fenixedu.academic.domain.accessControl.ActiveStudentsGroup;
 import org.fenixedu.academic.domain.accessControl.ActiveTeachersGroup;
 import org.fenixedu.academic.domain.accessControl.AllAlumniGroup;
 import org.fenixedu.academic.domain.student.Registration;
-import org.fenixedu.api.beans.FenixPerson;
 import org.fenixedu.bennu.core.domain.User;
-import org.fenixedu.dto.PersonInformationBean;
 
 import javax.ws.rs.Path;
 import java.util.ArrayList;
